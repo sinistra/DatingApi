@@ -10,5 +10,7 @@ namespace DatingApi.Models
         }
 
         public DbSet<Value> Values {get; set;}
+
+        public DbSet<User> Users {get; set;}
     }
 }
