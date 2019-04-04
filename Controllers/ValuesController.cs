@@ -22,6 +22,7 @@ namespace DatingApi.Controllers
         }
 
         // GET api/values
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> Get()
         {
@@ -35,7 +36,8 @@ namespace DatingApi.Controllers
         public async Task<IActionResult> Get(int id)
         {
             var value = await _dbContext.Values.FirstOrDefaultAsync(x => x.Id == id);
-            if (value == null) {
+            if (value == null)
+            {
                 return NotFound();
             }
 
