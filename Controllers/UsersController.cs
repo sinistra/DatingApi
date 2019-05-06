@@ -4,12 +4,14 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 using DatingApi.Dtos;
+using DatingApi.Helpers;
 using DatingApi.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DatingApi.Controllers
 {
+    [ServiceFilter(typeof(LogUserActivity))]
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
